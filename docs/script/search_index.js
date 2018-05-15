@@ -13,25 +13,31 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/index.test.js.html#lineNumber5",
+    "test-file/test/index.test.js.html#lineNumber10",
     "TestTable constructor",
     "test"
   ],
   [
     "",
-    "test-file/test/index.test.js.html#lineNumber18",
+    "test-file/test/index.test.js.html#lineNumber5",
+    "TestTable constructor empty",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/index.test.js.html#lineNumber23",
     "TestTable run",
     "test"
   ],
   [
     "",
-    "test-file/test/index.test.js.html#lineNumber43",
+    "test-file/test/index.test.js.html#lineNumber48",
     "TestTable run with only",
     "test"
   ],
   [
     "",
-    "test-file/test/index.test.js.html#lineNumber30",
+    "test-file/test/index.test.js.html#lineNumber35",
     "TestTable run with skip",
     "test"
   ],

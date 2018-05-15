@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/index.js",
-    "content": "'use strict';\n\n/**\n *\n */\nclass TestTable {\n  /**\n   * @param {Object} d\n   */\n  constructor(d) {\n    if (existOnly(d)) {\n      for (let i = 0; i < d.length; i++) {\n        if (d[i].only !== undefined && d[i].only === true) {\n          d[i].skip = false;\n        } else {\n          d[i].skip = true;\n        }\n      }\n    } else {\n      for (let i = 0; i < d.length; i++) {\n        if (d[i].skip === undefined) {\n          d[i].skip = false;\n        }\n      }\n    }\n    this.data = d || [];\n  }\n\n  /**\n   * @param {Function} fn\n   */\n  run(fn) {\n    for (let i = 0; i < this.data.length; i++) {\n      if (this.data[i].skip == false) {\n        fn(i, this.data[i]);\n      }\n    }\n  }\n}\n\n/**\n * @private\n * @param {Object} d\n * @return {Boolean}\n */\nfunction existOnly(d) {\n  let exist = false;\n  for (let i = 0; i < d.length; i++) {\n    if (d[i].only) {\n      exist = true;\n    }\n  }\n  return exist;\n}\n\nmodule.exports = TestTable;\n",
+    "content": "'use strict';\n\n/**\n *\n */\nclass TestTable {\n  /**\n   * @param {Object} d\n   */\n  constructor(d) {\n    if (d) {\n      if (existOnly(d)) {\n        for (let i = 0; i < d.length; i++) {\n          if (d[i].only !== undefined && d[i].only === true) {\n            d[i].skip = false;\n          } else {\n            d[i].skip = true;\n          }\n        }\n      } else {\n        for (let i = 0; i < d.length; i++) {\n          if (d[i].skip === undefined) {\n            d[i].skip = false;\n          }\n        }\n      }\n    }\n    this.data = d || [];\n  }\n\n  /**\n   * @param {Function} fn\n   */\n  run(fn) {\n    for (let i = 0; i < this.data.length; i++) {\n      if (this.data[i].skip == false) {\n        fn(i, this.data[i]);\n      }\n    }\n  }\n}\n\n/**\n * @private\n * @param {Object} d\n * @return {Boolean}\n */\nfunction existOnly(d) {\n  let exist = false;\n  for (let i = 0; i < d.length; i++) {\n    if (d[i].only) {\n      exist = true;\n    }\n  }\n  return exist;\n}\n\nmodule.exports = TestTable;\n",
     "static": true,
     "longname": "/Users/paul/code/src/github.com/paulvollmer/testtable.js/src/index.js",
     "access": "public",
@@ -623,7 +623,7 @@
     "longname": "src/index.js~TestTable#data",
     "access": "public",
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 28,
     "undocument": true,
     "type": {
       "types": [
@@ -643,7 +643,7 @@
     "longname": "src/index.js~TestTable#run",
     "access": "public",
     "description": "",
-    "lineNumber": 32,
+    "lineNumber": 34,
     "params": [
       {
         "nullable": null,
@@ -672,7 +672,7 @@
     "importPath": "@paulvollmer/testtable",
     "importStyle": null,
     "description": "",
-    "lineNumber": 46,
+    "lineNumber": 48,
     "params": [
       {
         "nullable": null,
@@ -704,7 +704,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@paulvollmer/testtable\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Module to write data driven tests\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"test\": \"make test\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/paulvollmer/testtable.js.git\"\n  },\n  \"keywords\": [\n    \"testtable\"\n  ],\n  \"author\": \"paulvollmer\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/paulvollmer/testtable.js/issues\"\n  },\n  \"homepage\": \"https://github.com/paulvollmer/testtable.js#readme\",\n  \"devDependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-google\": \"^0.9.1\",\n    \"jest\": \"^22.4.3\"\n  },\n  \"dependencies\": {\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"@paulvollmer/testtable\",\n  \"version\": \"0.1.1\",\n  \"description\": \"Module to write data driven tests\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"test\": \"make test\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/paulvollmer/testtable.js.git\"\n  },\n  \"keywords\": [\n    \"testtable\"\n  ],\n  \"author\": \"paulvollmer\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/paulvollmer/testtable.js/issues\"\n  },\n  \"homepage\": \"https://github.com/paulvollmer/testtable.js#readme\",\n  \"devDependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-google\": \"^0.9.1\",\n    \"jest\": \"^22.4.3\"\n  },\n  \"dependencies\": {\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\"\n  }\n}\n",
     "longname": "/Users/paul/code/src/github.com/paulvollmer/testtable.js/package.json",
     "name": "package.json",
     "static": true,
@@ -714,7 +714,7 @@
     "__docId__": 54,
     "kind": "testFile",
     "name": "test/index.test.js",
-    "content": "'use strict';\n\nconst TestTable = require('../src');\n\ntest('TestTable constructor', () => {\n  const testData = [\n    {input: 'foo', expected: 1},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  expect(test.data.length).toBe(2);\n  expect(test.data[0].input).toBe('foo');\n  expect(test.data[0].expected).toBe(1);\n  expect(test.data[1].input).toBe('bar');\n  expect(test.data[1].expected).toBe(2);\n});\n\ntest('TestTable run', () => {\n  const testData = [\n    {input: 'foo', expected: 1},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(data.input).toBe(testData[index].input);\n    expect(data.expected).toBe(testData[index].expected);\n  });\n});\n\ntest('TestTable run with skip', () => {\n  const testData = [\n    {input: 'foo', expected: 1, skip: true},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(index).toBe(1);\n    expect(data.input).toBe('bar');\n    expect(data.expected).toBe(2);\n  });\n});\n\ntest('TestTable run with only', () => {\n  const testData = [\n    {input: 'foo', expected: 1, only: true},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(index).toBe(0);\n    expect(data.input).toBe('foo');\n    expect(data.expected).toBe(1);\n  });\n});\n",
+    "content": "'use strict';\n\nconst TestTable = require('../src');\n\ntest('TestTable constructor empty', () => {\n  let test= new TestTable();\n  expect(test.data.length).toBe(0);\n});\n\ntest('TestTable constructor', () => {\n  const testData = [\n    {input: 'foo', expected: 1},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  expect(test.data.length).toBe(2);\n  expect(test.data[0].input).toBe('foo');\n  expect(test.data[0].expected).toBe(1);\n  expect(test.data[1].input).toBe('bar');\n  expect(test.data[1].expected).toBe(2);\n});\n\ntest('TestTable run', () => {\n  const testData = [\n    {input: 'foo', expected: 1},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(data.input).toBe(testData[index].input);\n    expect(data.expected).toBe(testData[index].expected);\n  });\n});\n\ntest('TestTable run with skip', () => {\n  const testData = [\n    {input: 'foo', expected: 1, skip: true},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(index).toBe(1);\n    expect(data.input).toBe('bar');\n    expect(data.expected).toBe(2);\n  });\n});\n\ntest('TestTable run with only', () => {\n  const testData = [\n    {input: 'foo', expected: 1, only: true},\n    {input: 'bar', expected: 2},\n  ];\n  let test= new TestTable(testData);\n  test.run((index, data) => {\n    expect(index).toBe(0);\n    expect(data.input).toBe('foo');\n    expect(data.expected).toBe(1);\n  });\n});\n",
     "static": true,
     "longname": "/Users/paul/code/src/github.com/paulvollmer/testtable.js/test/index.test.js",
     "access": null,
@@ -731,7 +731,7 @@
     "static": true,
     "longname": "test/index.test.js~test0",
     "access": null,
-    "description": "TestTable constructor",
+    "description": "TestTable constructor empty",
     "lineNumber": 5
   },
   {
@@ -744,8 +744,8 @@
     "static": true,
     "longname": "test/index.test.js~test1",
     "access": null,
-    "description": "TestTable run",
-    "lineNumber": 18
+    "description": "TestTable constructor",
+    "lineNumber": 10
   },
   {
     "__docId__": 57,
@@ -757,8 +757,8 @@
     "static": true,
     "longname": "test/index.test.js~test2",
     "access": null,
-    "description": "TestTable run with skip",
-    "lineNumber": 30
+    "description": "TestTable run",
+    "lineNumber": 23
   },
   {
     "__docId__": 58,
@@ -770,7 +770,20 @@
     "static": true,
     "longname": "test/index.test.js~test3",
     "access": null,
+    "description": "TestTable run with skip",
+    "lineNumber": 35
+  },
+  {
+    "__docId__": 59,
+    "kind": "test",
+    "name": "test4",
+    "testId": 4,
+    "memberof": "test/index.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "test/index.test.js~test4",
+    "access": null,
     "description": "TestTable run with only",
-    "lineNumber": 43
+    "lineNumber": 48
   }
 ]
