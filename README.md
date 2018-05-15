@@ -1,2 +1,50 @@
 # testtable.js
-utility to write data driven tests
+Module to write data driven tests.
+
+## Usage
+
+```js
+const TestTable = require('testtable');
+
+describe('Sample test', () => {
+
+  // create an array with input and expected data
+  const testData = [
+    { input: 'hello foo', expected: 'hello world', skip: true },
+    { input: 'hello bar', expected: 'hello world' },
+  ];
+
+  // run all tests defined at the testData array
+  TestTable(testData).run((index, data) => {
+    test(`${index} should ...`, () => {
+      expect(index).toBe(1);
+      expect(data.input).toBe('hello bar');
+      expect(data.expected).toBe('hello world');
+    })
+  });
+
+});
+```
+
+## Test data
+
+Sample test data object
+```
+{
+  input: 'hello foo',
+  expected: 'hello bar',
+  only: true
+}
+```
+
+#### input
+The `input` property can be used to define the test data.
+
+#### expected
+The `expected` property set the data used to write code to check if x expect to be equal to y
+
+#### only
+The `only` property can be used to only run a specific item from the test data
+
+#### skip
+The `skip` property can be used to skip the execution of a test item

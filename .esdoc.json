@@ -18,10 +18,10 @@
         "brand": {
           "logo": "",
           "title": "testtable",
-          "description": "",
-          "repository": "",
-          "site": "",
-          "author": "",
+          "description": "Module to write data driven tests",
+          "repository": "https://github.com/paulvollmer/testtable.js",
+          "site": "https://github.com/paulvollmer/testtable.js",
+          "author": "Paul Vollmer",
           "image": ""
         },
         "test": {

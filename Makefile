@@ -1,5 +1,8 @@
 BIN = ./node_modules/.bin
 
+all: lint test
+.PHONY: all
+
 lint:
 	@$(BIN)/eslint .
 lint-fix:
