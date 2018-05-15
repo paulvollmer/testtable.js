@@ -1,8 +1,8 @@
 {
-  "name": "testtable",
+  "name": "@paulvollmer/testtable",
   "version": "0.0.1",
   "description": "utility to write data driven tests",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "make test"
   },
@@ -18,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/paulvollmer/testtable.js/issues"
   },
-  "homepage": "https://github.com/paulvollmer/testtable.js#readme"
+  "homepage": "https://github.com/paulvollmer/testtable.js#readme",
+  "devDependencies": {
+    "esdoc": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "jest": "^22.4.3"
+  },
+  "dependencies": {
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0"
+  }
 }
