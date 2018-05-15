@@ -2,6 +2,11 @@
 
 const TestTable = require('../src');
 
+test('TestTable constructor empty', () => {
+  let test= new TestTable();
+  expect(test.data.length).toBe(0);
+});
+
 test('TestTable constructor', () => {
   const testData = [
     {input: 'foo', expected: 1},
