@@ -1,6 +1,20 @@
 # testtable.js
 Module to write data driven tests.
 
+
+## Installation
+
+```
+npm install --save-dev @paulvollmer/testtable
+```
+
+or if you prefer yarn, run
+
+```
+npm add --dev @paulvollmer/testtable
+```
+
+
 ## Usage
 
 ```js
