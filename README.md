@@ -15,7 +15,7 @@ describe('Sample test', () => {
   ];
 
   // run all tests defined at the testData array
-  TestTable(testData).run((index, data) => {
+  new TestTable(testData).run((index, data) => {
     test(`${index} should ...`, () => {
       expect(index).toBe(1);
       expect(data.input).toBe('hello bar');
