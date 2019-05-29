@@ -11,7 +11,7 @@ npm install --save-dev @paulvollmer/testtable
 or if you prefer yarn, run
 
 ```
-npm add --dev @paulvollmer/testtable
+yarn add --dev @paulvollmer/testtable
 ```
 
 
